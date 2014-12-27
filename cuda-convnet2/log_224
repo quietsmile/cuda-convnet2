@@ -1,0 +1,215 @@
+Initialized data layer 'data', producing 50176 outputs
+Initialized data layer 'labvec', producing 1 outputs
+Initialized convolutional layer 'conv1' on GPUs 0, producing 56x56 96-channel output
+Initialized cross-map response-normalization layer 'rnorm1' on GPUs 0, producing 56x56 96-channel output
+Initialized max-pooling layer 'pool1' on GPUs 0, producing 28x28 96-channel output
+Initialized convolutional layer 'conv2' on GPUs 0, producing 28x28 192-channel output
+Initialized cross-map response-normalization layer 'rnorm2' on GPUs 0, producing 28x28 192-channel output
+Initialized max-pooling layer 'pool2' on GPUs 0, producing 14x14 192-channel output
+Initialized convolutional layer 'conv3' on GPUs 0, producing 14x14 256-channel output
+Initialized convolutional layer 'conv4' on GPUs 0, producing 14x14 256-channel output
+Initialized convolutional layer 'conv5' on GPUs 0, producing 14x14 256-channel output
+Initialized max-pooling layer 'pool3' on GPUs 0, producing 7x7 256-channel output
+Initialized fully-connected layer 'fc4096a' on GPUs 0, producing 1024 outputs
+Initialized dropout2 layer 'dropout1' on GPUs 0, producing 1024 outputs
+Initialized fully-connected layer 'fc4096b' on GPUs 0, producing 1024 outputs
+Initialized dropout2 layer 'dropout2' on GPUs 0, producing 1024 outputs
+Initialized fully-connected layer 'fc1000' on GPUs 0, producing 121 outputs
+Initialized softmax layer 'probs' on GPUs 0, producing 121 outputs
+Initialized logistic regression cost 'logprob' on GPUs 0
+Initialized neuron layer 'fc4096b_neuron' on GPUs 0, producing 1024 outputs
+Initialized neuron layer 'conv3_neuron' on GPUs 0, producing 50176 outputs
+Initialized neuron layer 'conv2_neuron' on GPUs 0, producing 150528 outputs
+Initialized neuron layer 'conv4_neuron' on GPUs 0, producing 50176 outputs
+Initialized neuron layer 'pool3_neuron' on GPUs 0, producing 12544 outputs
+Initialized neuron layer 'pool1_neuron' on GPUs 0, producing 75264 outputs
+Initialized neuron layer 'fc4096a_neuron' on GPUs 0, producing 1024 outputs
+Layer conv3_neuron using acts from layer conv3
+Layer fc4096a_neuron using acts from layer fc4096a
+Layer fc4096b_neuron using acts from layer fc4096b
+Layer conv2_neuron using acts from layer conv2
+Layer conv4_neuron using acts from layer conv4
+=========================
+Importing cudaconvnet._ConvNet C++ module
+Fwd terminal: logprob
+found bwd terminal conv1[0] in passIdx=0
+=========================
+Training ConvNet
+Add PCA noise to color channels with given scale                        : 0  [DEFAULT]
+Check gradients and quit?                                               : 0  [DEFAULT]
+Conserve GPU memory (slower)?                                           : 0  [DEFAULT]
+Convert given conv layers to unshared local                             :    
+Cropped DP: crop size (0 = don't crop)                                  : 224 
+Cropped DP: test on multiple patches?                                   : 0  [DEFAULT]
+Data batch range: testing                                               : 100-100 
+Data batch range: training                                              : 0-8 
+Data path                                                               : /home/zdb/play/bowl2/bowl_data/bowl_batches 
+Data provider                                                           : cifar 
+Force save before quitting                                              : 0  [DEFAULT]
+GPU override                                                            : 0  
+Layer definition file                                                   : bowl_models/AlexNet_models_224.cfg 
+Layer file path prefix                                                  :    [DEFAULT]
+Layer parameter file                                                    : bowl_models/AlexNet_params_224.cfg 
+Load file                                                               :    [DEFAULT]
+Logreg cost layer name (for --test-out)                                 :    [DEFAULT]
+Minibatch size                                                          : 128 
+Number of epochs                                                        : 90 
+Output test case predictions to given path                              :    [DEFAULT]
+Save file override                                                      :    
+Save path                                                               : /home/zdb/play/bowl2/trained_model 
+Subtract this scalar from image (-1 = don't)                            : -1 [DEFAULT]
+Test and quit?                                                          : 0  [DEFAULT]
+Test on one batch at a time?                                            : 1  [DEFAULT]
+Testing frequency                                                       : 18 
+Unshare weight matrices in given layers                                 :    
+Write test data features from given layer                               :    [DEFAULT]
+Write test data features to this path (to be used with --write-features):    [DEFAULT]
+=========================
+Running on CUDA device(s) 0
+Current time: Sun Dec 28 00:05:01 2014
+Saving checkpoints to /home/zdb/play/bowl2/trained_model/ConvNet__2014-12-28_00.03.44
+=========================
+1.0 (0.00%)... logprob:  4.348751, 0.947266, 0.799805 (16.147 sec)
+1.1 (0.12%)... logprob:  4.206001, 0.923503, 0.770833 (15.937 sec)
+1.2 (0.25%)... logprob:  4.005471, 0.875651, 0.718099 (16.152 sec)
+1.3 (0.37%)... logprob:  3.852838, 0.851562, 0.677734 (16.077 sec)
+1.4 (0.49%)... logprob:  3.679234, 0.838542, 0.636393 (16.064 sec)
+1.5 (0.62%)... logprob:  3.592351, 0.832357, 0.596029 (15.942 sec)
+1.6 (0.74%)... logprob:  3.500794, 0.819987, 0.566406 (15.991 sec)
+1.7 (0.86%)... logprob:  3.380938, 0.815430, 0.541341 (15.845 sec)
+1.8 (0.99%)... logprob:  3.405126, 0.810547, 0.543945 (16.051 sec)
+2.0 (1.11%)... logprob:  3.321842, 0.796875, 0.517253 (15.985 sec)
+2.1 (1.23%)... logprob:  3.290772, 0.795247, 0.508789 (16.020 sec)
+2.2 (1.36%)... logprob:  3.189448, 0.777344, 0.490234 (15.962 sec)
+2.3 (1.48%)... logprob:  3.084363, 0.758464, 0.460938 (16.014 sec)
+2.4 (1.60%)... logprob:  3.191290, 0.780273, 0.493164 (15.845 sec)
+2.5 (1.73%)... logprob:  3.054513, 0.753255, 0.456055 (15.946 sec)
+2.6 (1.85%)... logprob:  2.962214, 0.725260, 0.431641 (15.884 sec)
+2.7 (1.98%)... logprob:  2.885949, 0.737630, 0.402995 (15.930 sec)
+2.8 (2.10%)... logprob:  2.885106, 0.720052, 0.406901 
+======================Test output======================
+logprob:  2.727732, 0.705357, 0.379464 
+----------------------Averages-------------------------
+logprob:  2.727732, 0.705357, 0.379464 
+------------------------------------------------------- 
+Layer 'conv1' weights[0]: 1.382799e-02 [6.465552e-05] [4.675699e-03] 
+Layer 'conv1' biases: 3.095276e-04 [9.102639e-07] 
+Layer 'conv2' weights[0]: 8.183982e-03 [1.344444e-05] [1.642775e-03] 
+Layer 'conv2' biases: 9.998607e-01 [1.051679e-06] 
+Layer 'conv3' weights[0]: 2.355819e-02 [1.566717e-05] [6.650413e-04] 
+Layer 'conv3' biases: 3.823508e-04 [2.506130e-06] 
+Layer 'conv4' weights[0]: 2.345128e-02 [1.694217e-05] [7.224412e-04] 
+Layer 'conv4' biases: 9.998938e-01 [3.075463e-06] 
+Layer 'conv5' weights[0]: 2.352083e-02 [1.925906e-05] [8.188087e-04] 
+Layer 'conv5' biases: 9.994633e-01 [3.255839e-06] 
+Layer 'fc4096a' weights[0]: 7.858943e-03 [6.056669e-06] [7.706722e-04] 
+Layer 'fc4096a' biases: 9.999167e-01 [2.007948e-06] 
+Layer 'fc4096b' weights[0]: 8.318420e-03 [2.277654e-05] [2.738085e-03] 
+Layer 'fc4096b' biases: 9.993819e-01 [1.214184e-05] 
+Layer 'fc1000' weights[0]: 1.182009e-02 [7.187239e-05] [6.080529e-03] 
+Layer 'fc1000' biases: 9.999999e-01 [1.130434e-04] 
+-------------------------------------------------------
+Saved checkpoint to /home/zdb/play/bowl2/trained_model/ConvNet__2014-12-28_00.03.44
+======================================================= (30.637 sec)
+3.0 (2.22%)... logprob:  2.940136, 0.730794, 0.425781 (16.037 sec)
+3.1 (2.35%)... logprob:  2.821116, 0.721680, 0.397135 (15.996 sec)
+3.2 (2.47%)... logprob:  2.730034, 0.705404, 0.367513 (16.086 sec)
+3.3 (2.59%)... logprob:  2.729307, 0.697266, 0.375326 (15.948 sec)
+3.4 (2.72%)... logprob:  2.610061, 0.682943, 0.344401 (16.015 sec)
+3.5 (2.84%)... logprob:  2.572056, 0.667643, 0.337891 (15.983 sec)
+3.6 (2.96%)... logprob:  2.562810, 0.662760, 0.342773 (16.106 sec)
+3.7 (3.09%)... logprob:  2.501456, 0.682943, 0.303711 (15.955 sec)
+3.8 (3.21%)... logprob:  2.508083, 0.658203, 0.321940 (16.083 sec)
+4.0 (3.33%)... logprob:  2.464345, 0.649414, 0.326497 (15.977 sec)
+4.1 (3.46%)... logprob:  2.433249, 0.655924, 0.315430 (16.079 sec)
+4.2 (3.58%)... logprob:  2.419885, 0.657227, 0.298503 (16.033 sec)
+4.3 (3.70%)... logprob:  2.319923, 0.625977, 0.282878 (16.032 sec)
+4.4 (3.83%)... logprob:  2.317019, 0.642253, 0.278320 (15.869 sec)
+4.5 (3.95%)... logprob:  2.303124, 0.630859, 0.281576 (15.931 sec)
+4.6 (4.07%)... logprob:  2.296730, 0.619792, 0.275716 (15.830 sec)
+4.7 (4.20%)... logprob:  2.275378, 0.625651, 0.262044 (15.919 sec)
+4.8 (4.32%)... logprob:  2.309982, 0.635742, 0.282552 
+======================Test output======================
+logprob:  2.111267, 0.597098, 0.244048 
+----------------------Averages-------------------------
+logprob:  2.111267, 0.597098, 0.244048 
+------------------------------------------------------- 
+Layer 'conv1' weights[0]: 1.681038e-02 [1.091404e-04] [6.492441e-03] 
+Layer 'conv1' biases: 7.422441e-04 [1.688174e-06] 
+Layer 'conv2' weights[0]: 8.514374e-03 [1.794527e-05] [2.107644e-03] 
+Layer 'conv2' biases: 9.997857e-01 [1.152658e-06] 
+Layer 'conv3' weights[0]: 2.322416e-02 [1.857848e-05] [7.999634e-04] 
+Layer 'conv3' biases: 6.245995e-04 [2.931844e-06] 
+Layer 'conv4' weights[0]: 2.306943e-02 [2.179389e-05] [9.447084e-04] 
+Layer 'conv4' biases: 9.998220e-01 [4.574977e-06] 
+Layer 'conv5' weights[0]: 2.317821e-02 [2.190810e-05] [9.452024e-04] 
+Layer 'conv5' biases: 9.993728e-01 [4.716175e-06] 
+Layer 'fc4096a' weights[0]: 7.766348e-03 [6.458225e-06] [8.315652e-04] 
+Layer 'fc4096a' biases: 9.998981e-01 [2.771828e-06] 
+Layer 'fc4096b' weights[0]: 8.703639e-03 [2.505896e-05] [2.879136e-03] 
+Layer 'fc4096b' biases: 9.993621e-01 [1.386698e-05] 
+Layer 'fc1000' weights[0]: 1.449477e-02 [6.675390e-05] [4.605378e-03] 
+Layer 'fc1000' biases: 1.000000e+00 [1.144919e-04] 
+-------------------------------------------------------
+Saved checkpoint to /home/zdb/play/bowl2/trained_model/ConvNet__2014-12-28_00.03.44
+======================================================= (30.569 sec)
+5.0 (4.44%)... logprob:  2.217033, 0.610352, 0.263672 (16.045 sec)
+5.1 (4.57%)... logprob:  2.230929, 0.616862, 0.262695 (15.946 sec)
+5.2 (4.69%)... logprob:  2.212749, 0.609701, 0.249674 (16.022 sec)
+5.3 (4.81%)... logprob:  2.157422, 0.607747, 0.244466 (15.928 sec)
+5.4 (4.94%)... logprob:  2.132584, 0.591797, 0.240234 (16.042 sec)
+5.5 (5.06%)... logprob:  2.123953, 0.600911, 0.239258 (15.951 sec)
+5.6 (5.19%)... logprob:  2.114598, 0.592448, 0.236654 (16.045 sec)
+5.7 (5.31%)... logprob:  2.115244, 0.600586, 0.233073 (15.888 sec)
+5.8 (5.43%)... logprob:  2.090850, 0.576823, 0.231445 (15.970 sec)
+6.0 (5.56%)... logprob:  2.050105, 0.567057, 0.232096 (15.828 sec)
+6.1 (5.68%)... logprob:  2.101891, 0.597656, 0.238932 (15.918 sec)
+6.2 (5.80%)... logprob:  2.118724, 0.602865, 0.236654 (15.800 sec)
+6.3 (5.93%)... logprob:  2.028060, 0.578776, 0.218424 (16.008 sec)
+6.4 (6.05%)... logprob:  1.990428, 0.565104, 0.201497 (15.836 sec)
+6.5 (6.17%)... logprob:  2.018072, 0.572591, 0.220378 (15.992 sec)
+6.6 (6.30%)... logprob:  2.015056, 0.575521, 0.215495 (15.847 sec)
+6.7 (6.42%)... logprob:  1.995268, 0.582357, 0.203451 (15.956 sec)
+6.8 (6.54%)... logprob:  2.007353, 0.563802, 0.211589 
+======================Test output======================
+logprob:  1.867268, 0.550967, 0.187500 
+----------------------Averages-------------------------
+logprob:  1.867268, 0.550967, 0.187500 
+------------------------------------------------------- 
+Layer 'conv1' weights[0]: 1.848684e-02 [1.089443e-04] [5.893074e-03] 
+Layer 'conv1' biases: 1.074976e-03 [2.116318e-06] 
+Layer 'conv2' weights[0]: 8.707202e-03 [1.903766e-05] [2.186427e-03] 
+Layer 'conv2' biases: 9.997517e-01 [1.207071e-06] 
+Layer 'conv3' weights[0]: 2.289953e-02 [1.974182e-05] [8.621060e-04] 
+Layer 'conv3' biases: 7.603305e-04 [2.916001e-06] 
+Layer 'conv4' weights[0]: 2.269970e-02 [2.164205e-05] [9.534073e-04] 
+Layer 'conv4' biases: 9.997433e-01 [4.763349e-06] 
+Layer 'conv5' weights[0]: 2.282131e-02 [2.135600e-05] [9.357921e-04] 
+Layer 'conv5' biases: 9.993389e-01 [5.109612e-06] 
+Layer 'fc4096a' weights[0]: 7.665502e-03 [6.503239e-06] [8.483774e-04] 
+Layer 'fc4096a' biases: 9.998856e-01 [3.271299e-06] 
+Layer 'fc4096b' weights[0]: 9.007975e-03 [2.529929e-05] [2.808543e-03] 
+Layer 'fc4096b' biases: 9.994256e-01 [1.402395e-05] 
+Layer 'fc1000' weights[0]: 1.645835e-02 [6.352479e-05] [3.859730e-03] 
+Layer 'fc1000' biases: 1.000000e+00 [1.316623e-04] 
+-------------------------------------------------------
+Saved checkpoint to /home/zdb/play/bowl2/trained_model/ConvNet__2014-12-28_00.03.44
+======================================================= (30.152 sec)
+7.0 (6.67%)... logprob:  1.970384, 0.561849, 0.212565 (15.949 sec)
+7.1 (6.79%)... logprob:  1.991242, 0.559570, 0.208659 (15.796 sec)
+7.2 (6.91%)... logprob:  1.986286, 0.556641, 0.214193 (15.928 sec)
+7.3 (7.04%)... logprob:  1.946189, 0.560547, 0.204427 (15.791 sec)
+7.4 (7.16%)... logprob:  1.936282, 0.560221, 0.197591 (15.999 sec)
+7.5 (7.28%)... logprob:  1.932778, 0.558268, 0.203125 (15.943 sec)
+7.6 (7.41%)... logprob:  1.930764, 0.556966, 0.197591 (15.961 sec)
+7.7 (7.53%)... logprob:  1.929026, 0.561198, 0.196615 (15.798 sec)
+7.8 (7.65%)... logprob:  1.939351, 0.558268, 0.195638 (15.965 sec)
+8.0 (7.78%)... logprob:  1.872488, 0.522461, 0.197591 (15.834 sec)
+8.1 (7.90%)... logprob:  1.905033, 0.546224, 0.194010 (15.860 sec)
+8.2 (8.02%)... logprob:  1.902687, 0.546224, 0.185872 (16.017 sec)
+8.3 (8.15%)... logprob:  1.890401, 0.547526, 0.190755 (15.950 sec)
+8.4 (8.27%)... logprob:  1.841964, 0.533203, 0.181641 (15.886 sec)
+8.5 (8.40%)... logprob:  1.848665, 0.537760, 0.181315 (15.901 sec)
+8.6 (8.52%)... logprob:  1.833372, 0.532227, 0.178385 (15.753 sec)
+8.7 (8.64%)... logprob:  1.873317, 0.543945, 0.182617 (15.828 sec)
+8.8 (8.77%)...
